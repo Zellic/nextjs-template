@@ -1,0 +1,131 @@
+>:first-child {
+	margin-top: 0 !important;
+}
+
+input {
+	width: 100%;
+	border: 1px var(--input-border, #000) solid;
+	outline: none;
+	box-sizing: border-box;
+
+	&:not([type]),
+	&[type="email"],
+	&[type="number"],
+	&[type="search"],
+	&[type="text"],
+	&[type="tel"],
+	&[type="url"],
+	&[type="date"],
+	&[type="password"] {
+		display: inline-block;
+		height: 5ex;
+		padding: 0.5ex 0 0.5ex 1ch;
+		background: var(--input-color, #fff);
+		border-radius: 0.5vmin;
+		color: var(--input-text, #000);
+		//max-width: 25ch;
+
+		&:focus, &:active {
+			border: 1px var(--input-border-active, #fff) solid;
+		}
+	}
+
+	&[type="date"] {
+		&::-webkit-calendar-picker-indicator {
+			margin-right: 0.5em;
+			//	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23cccccc" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+		}
+	}
+}
+
+button {
+	padding: var(--s-1) var(--s0);
+	border-radius: 0.5vmin;
+	border: none;
+
+	&, &.neutral {
+		color: var(--button-neutral-text, #000);
+		background: var(--button-neutral, hsl(0, 0%, 87%));
+
+		&:hover {
+			background: var(--button-neutral-hover, hsl(0, 0%, 95%));
+		}
+	}
+
+	&[type="submit"], .primary {
+		color: var(--button-primary-text, #fff);
+		background: var(--button-primary, hsl(219, 79%, 58%));
+
+		&:hover {
+			background: var(--button-primary-hover, hsl(219, 87%, 63%));
+		}
+	}
+
+	&.danger {
+		color: var(--button-danger-text, #fff);
+		background: var(--button-danger, hsl(0, 68%, 57%));
+
+		&:hover {
+			background: var(--button-danger-hover, hsl(0, 72%, 61%));
+		}
+	}
+
+	&:disabled, .disabled {
+		color: var(--button-disabled-text, #000);
+		background: var(--button-disabled, hsl(0deg 0% 83%));
+	}
+}
+
+form, .form {
+	display: inline-flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 60ch;
+	color: var(--form-text, #000);
+
+	span.error {
+		margin-left: var(--s-2);
+		margin-top: var(--s-2);
+		font-size: 0.8em;
+	}
+
+	label {
+		font-weight: bold;
+	}
+
+	input {
+		max-width: 100%;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin: var(--s0) 0;
+	}
+
+	> * + * {
+		margin-top: var(--s-1);
+	}
+
+	> .field {
+		display: flex;
+		flex-direction: column;
+
+		> * + * {
+			margin-top: var(--s-2);
+		}
+
+		.message {
+			font-size: 0.75em;
+		}
+
+		&.error {
+			input {
+				border: 1px var(--form-error-border, #c53333) solid;
+			}
+
+			> .error {
+				align-self: flex-start;
+				color: var(--form-error-text, #de6a6a);
+			}
+		}
+	}
+}

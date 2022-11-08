@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i,800&display=swap&subset=cyrillic,greek,vietnamese");
+
+:root {
+	--measure: 180ch;
+	--ratio: 1.5;
+	--s-5: calc(var(--s-4) / var(--ratio));
+	--s-4: calc(var(--s-3) / var(--ratio));
+	--s-3: calc(var(--s-2) / var(--ratio));
+	--s-2: calc(var(--s-1) / var(--ratio));
+	--s-1: calc(var(--s0) / var(--ratio));
+	--s0: 1rem;
+	--s1: calc(var(--s0) * var(--ratio));
+	--s2: calc(var(--s1) * var(--ratio));
+	--s3: calc(var(--s2) * var(--ratio));
+	--s4: calc(var(--s3) * var(--ratio));
+	--s5: calc(var(--s4) * var(--ratio));
+}
+
+body {
+	font-family: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, serif;
+}
+
+* {
+	max-width: var(--measure);
+}
+
+html, body, div, header, nav, main, footer {
+	max-width: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: var(--s-1) 0;
+}
+
+div, p {
+	margin: 0;
+}

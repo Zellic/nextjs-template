@@ -1,0 +1,37 @@
+@import "normalize";
+@import "defaults";
+@import "colors";
+@import "microtip";
+@import "form";
+
+body {
+	background: var(--body-color);
+	color: var(--body-text);
+}
+
+ul {
+	> li {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	> li + li {
+		margin-top: var(--s-1);
+	}
+}
+
+html,
+body,
+body > div:first-child,
+div#__next,
+div#__next > div {
+	height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	word-break: break-all;
+}
+
+b, strong {
+	font-weight: bold;
+}
